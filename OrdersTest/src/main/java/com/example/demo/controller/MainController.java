@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
@@ -22,7 +21,6 @@ public class MainController {
 	 @RequestMapping(value = { "/","/main" }, method = RequestMethod.GET)
 	    public String showMainPage(Model model) {
 		 	OrderInfo order = new OrderInfo();
-	       // PersonForm personForm = new PersonForm();
 	        model.addAttribute("order", order);
 	        return "main";
 	    }
@@ -41,18 +39,4 @@ public class MainController {
 	        }
 	        return "main";
 	    }
-
-	/*
-	@RequestMapping(value= {"/","/menu"}, method=RequestMethod.GET)
-	public String getOrderNumber(@RequestParam Long id)
-	{
-		
-		//Long orderId;
-		//model.addAttribute("orderId", orderId);
-		OrderInfo order = orderDAO.findOrder(id);
-		GoodsInfo goods = goodsDAO.findGoods(order.getGoodsId());
-		ResultForm result = new ResultForm(order.getOrderId(), goods.getGoodsName(), order.getAmount(), goods.getPrice());
-		//model.addAttribute("result",result);
-		return "menu";
-	}*/
 }

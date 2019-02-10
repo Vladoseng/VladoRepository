@@ -1,0 +1,15 @@
+create table goods
+(
+	ID BIGINT not null,
+	name_of_goods varchar(128) not null,
+	price int not null,
+	PRIMARY KEY(ID)
+);
+
+create table orders
+(
+	ID BIGINT not null PRIMARY KEY,
+	Goods_ID BIGINT REFERENCES goods(ID),
+	Amount int not null
+);
+

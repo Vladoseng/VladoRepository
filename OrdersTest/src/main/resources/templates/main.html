@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Main Page</title>
+	</head>
+	<body>
+		<h1>Input the order Id:</h1>
+         <form th:action="@{/main}" th:object="${order}" method="POST">
+         	Order Id:
+         	<input type="text" th:field="*{orderId}"/>
+         	<input type="submit" value="Create"/>
+         	<br/>
+         </form>
+         <br/>
+	</body>
+</html>
